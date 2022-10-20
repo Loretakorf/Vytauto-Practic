@@ -25,13 +25,11 @@ body {
 header {
     grid-area: header;
     border: 2px solid red;
-    height: 100px;
+   
 }
 article {
-    grid-area: navigation;
+    grid-area: Sidebar;
     border: 2px solid red;
-    grid-column: 1;
-    grid-row: span 2;
 }
 aside {
     grid-area: ads;
@@ -41,7 +39,7 @@ aside {
 nav {
     border: 2px solid red;
     grid-area: navigation;
-    height: 100px;
+    
 }
 main {
     border: 2px solid red;
@@ -52,20 +50,18 @@ main {
 footer {
     grid-area: footer;
     border: 2px solid red;
-    height: 100px;
+   
 }
 @media screen and (max-width: 1024px)  {
     .grid {
         grid-template-areas: 
-        "header header"
-        "navigation navigation"
-        "sidebar main"
-        "ads footer";
+        "header header header"
+        "navigation navigation navigation"
+        "sidebar main main"
+        "ads footer footer";
 
     }
-    article {
-        grid-row: 3;
-    }
+   
 }
 @media screen and (max-width: 768px) {
     .grid {

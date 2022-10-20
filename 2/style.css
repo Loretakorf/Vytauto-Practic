@@ -9,11 +9,10 @@ body {
 .layout {
     display: grid;
     grid-template-columns: repeat(12, auto);
-    grid-template-rows: 200px auto;
+    grid-template-rows: 600px auto;
     gap: 5px;
 }
 .first {
-    
     border: 2px solid red;
     grid-column: 2 / span 4;
     grid-row: 1 / span 6;
