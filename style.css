@@ -1,0 +1,38 @@
+html,
+body {
+    min-height: 100vh;
+    margin: 10px auto;
+}
+* {
+    box-sizing: border-box;
+}
+.layout {
+    display: grid;
+    grid-template-columns: repeat(12, auto);
+    grid-template-rows: 100px auto;
+    gap: 5px;
+    grid-template-areas: 
+    ". header header header header ."
+    ". main main main main ."
+    ". footer footer footer footer .";
+}
+header {
+    border: 2px solid red;
+    grid-area: header;
+    display: grid;
+    background-color: rgb(115, 164, 181);
+}
+main {
+    grid-area: main;
+    display: grid;
+    border: 2px solid red;
+    background-color: lightblue;
+    min-height: 500px;
+}
+footer {
+    grid-area: footer;
+    display: grid;
+    border: 2px solid red;
+    background-color: rgb(23, 26, 27);
+    min-height: 100px;
+}
