@@ -1,76 +1,68 @@
 body,
 html {
     height: 100vh;
-    font-family: 'Inter', sans-serif;
-    background: #F5F5F5;
-}
-* {
-    box-sizing: border-box;
 }
 body {
     margin: 0 auto;
 }
-.grid {
-    display: grid;
-    grid-template-columns: repeat(100px, auto);
-    grid-template-rows: 100px auto;
-    grid-template-areas: 
-    "header header header header"
-    "sidebar navigation  navigation ads"
-    "sidebar main  main ads"
-    "footer footer footer footer";
+header,
+nav,
+main,
+aside,
+section,
+footer {
+    border: 2px solid red;
+}
+.layout {
     height: 100%;
+    display: grid;
     gap: 10px;
+    grid-template-rows: 100px auto;
+    grid-template-areas:
+    "header header header header"
+    "sidebar navigation navigation ads"
+    "sidebar main main ads"
+    "footer footer footer footer";
 }
 header {
     grid-area: header;
-    border: 2px solid red;
-   
-}
-article {
-    grid-area: Sidebar;
-    border: 2px solid red;
-}
-aside {
-    grid-area: ads;
-    border: 2px solid red;
-    
 }
 nav {
-    border: 2px solid red;
     grid-area: navigation;
-    
 }
 main {
-    border: 2px solid red;
     grid-area: main;
-    min-height: 600px;
-   
+    min-height: 550px;
+}
+aside {
+    grid-area: sidebar;
+}
+section {
+    grid-area: ads;
 }
 footer {
     grid-area: footer;
-    border: 2px solid red;
-   
 }
-@media screen and (max-width: 1024px)  {
-    .grid {
+@media screen and (max-width: 1024px) {
+    .layout {
         grid-template-areas: 
         "header header header"
         "navigation navigation navigation"
         "sidebar main main"
         "ads footer footer";
-
     }
-   
+    
 }
 @media screen and (max-width: 768px) {
-    .grid {
+    .layout {
+        grid-template-rows: 60px auto;
         grid-template-areas: 
         "header"
         "navigation"
         "main"
         "sidebar"
-        "ads" 
+        "ads"
         "footer";
     }
+    
 }
