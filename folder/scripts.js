@@ -17,4 +17,4 @@ console.log(pirmasScaicius + antrasScaicius);
 antrasScaicius = undefined;
 console.log(pirmasScaicius + antrasScaicius);
 antrasScaicius = "2a";
-console.log("ab" + " " + "bc");g
+console.log("ab" + " " + "bc");
