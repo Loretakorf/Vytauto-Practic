@@ -1,0 +1,26 @@
+html,
+body {
+    min-height: 100vh;
+    margin: 10px auto;
+}
+* {
+    box-sizing: border-box;
+}
+.layout {
+    display: grid;
+    grid-template-columns: repeat(12, auto);
+    grid-template-rows: 600px auto;
+    gap: 5px;
+}
+.first {
+    border: 2px solid red;
+    grid-column: 2 / span 4;
+    grid-row: 1 / span 6;
+}
+.second {
+    border: 2px solid red;
+    grid-column: 6 / span 6;
+    grid-row: 1 / span 6;
+}
+
+
