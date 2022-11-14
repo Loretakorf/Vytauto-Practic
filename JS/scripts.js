@@ -59,17 +59,19 @@ jegu atimame nors viena minute, valanda turi sumazieti -1,
 // const minuteDifference = (60 - currentMinutes) * additionalHour * isNotTooLate;
 // alert (`liko: ${hourDifference} val ${minuteDifference} min`);
 
-console.log("A", "" + 1 + 0); // 10
+console.log("A", "" + 1 + 0); // "10"
 console.log("B", "" - 1 + 0); // -1
 console.log("C", true + false); // 1
 console.log("D", 6 / "3"); // 2
 console.log("E", "2" * "3"); // 6
 console.log("F", 4 + 5 + "px"); //"9px"
 console.log("G", "$" + 4 + 5); //"$45"
-console.log("H", "4" - 2); // "2"
+console.log("H", "4" - 2); // 2
 console.log("I", "4px" - 2); // NaN
-console.log("J", "  -9  " + 5); //" -9 5 "
-console.log("K", "  -9  " - 5); // "-14"
+console.log("J", "  -9  " + 5); //"  -9  5"
+console.log("K", "  -9  " - 5); // -14
+console.log("L", null + 1); //1
+console.log("M", undefined + 1)//NaN
 
 
 
