@@ -14,6 +14,8 @@
 // alert(`Jusu bmi yra ${bmi}`)
 
 // 
+
+
 // const pradzia = 18;
 // const valandos = Number(prompt("Kiek dabar valandu?")); //4
 // const minutes = Number(prompt("Kiek dabar minuciu?")); //0 //25
@@ -73,7 +75,7 @@ console.log("K", "  -9  " - 5); // -14
 console.log("L", null + 1); //1
 console.log("M", undefined + 1)//NaN
 
-
+2
 
 
 // console.log("valandos", valandos, typeof valandos);
