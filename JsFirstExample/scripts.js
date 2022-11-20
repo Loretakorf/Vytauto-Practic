@@ -148,28 +148,21 @@ If you are extra active (very hard exercise/sports & a physical job): calories =
 // const answer = prompt();
 // if (y === true)
 
-let answer = prompt("Definite budzet?(yes, no)");
-let value = prompt("alternative funding?(yes, no)");
-let value1 = prompt("Known champion for it?(yes, no)");
-
-let question = prompt("Clear project Scope?(yes, no)");
-let answer1 = prompt("Achievavle timescale");
-let question1 = prompt("Happy to profit?");
-
+const answer = prompt("Definite budzet?(yes, no)");
 if (answer === "yes") {
-  alert("Known champion for it?");
-  if (value1 === "yes") {
-    alert("Clear project Scope?");
-    if (question === "yes") {
-      alert("Achievable timescale?");
-      if (answer1 === "yes") {
+  const champion = prompt("Known champion for it?(yes, no)");
+  if (champion === "yes") {
+    const project = prompt("Clear project Scope?(yes, no)");
+    if (project === "yes") {
+      const timescale = prompt("Achievavle timescale?");
+      if (timescale === "yes") {
         alert("go for it");
       } else {
         alert("Get more time");
       }
     } else {
-      alert("Happy to profit?");
-      if (question1 === "yes") {
+      const profit = prompt("Happy to profit?");
+      if (profit === "yes") {
         alert("Cash in");
       } else {
         alert("Explain what it matter");
@@ -179,8 +172,8 @@ if (answer === "yes") {
     alert("Leave it alone!");
   }
 } else {
-  alert("alternative funding?");
-  if (value === "yes") {
+  const funding = prompt("alternative funding?(yes, no)");
+  if (funding === "yes") {
     alert("Sort out funding");
   } else {
     alert("Leave it alone");
