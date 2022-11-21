@@ -1,0 +1,37 @@
+/* #some-element {
+    
+}
+.element-style {
+    color: brown;
+    display: none;
+}
+.element-style.active {
+    display: block;
+} */
+/* 
+#dropdown {
+    position: relative;
+}
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    background-color: grey;
+    border-radius: 5px;
+    padding: 10px;
+    display: none;
+}
+.dropdown-menu.active {
+    display: block;
+} */
+#accordion {
+    /* position: relative; */
+}
+.accordion-content {
+    /* position: absolute; */
+    display: block;
+   
+}
+.accordion-content.hidden {
+    display: none;
+}
