@@ -1,0 +1,28 @@
+/* :root {
+    --modecolor: rgb(181, 18, 18);
+    --spaceSmall: 0,5rem;
+    --spaceBig: 1rem;
+}
+section {
+    --modecolor: rgb(136, 231, 136);
+}
+.test {
+    color: var(--modecolor);
+}
+.test3 {
+    background-color: var(--modecolor);
+} */
+/* body.light {
+    --color: #000;
+    --bgcolor:#fff;
+}
+body.dark {
+    --color: #fff;
+    --bgcolor:#000;
+}
+p,
+h1,
+h2 {
+    color: var(--color);
+    background-color: var(--bgcolor);
+} */

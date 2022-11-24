@@ -155,3 +155,20 @@ function toggleAccordion() {
         accordionContentElement.className = accordion_hidden;
     }
 }
+
+// console.log - debugging
+// kintamieji
+// let ir const deklaravimas
+// naršyklės funkcijos
+// prompt, alert
+// duomenų tipai
+// string, number, boolean, null, undefined
+// tipų tikrinimas typeof// operatoriai
+// ===, +, -, *, /, >, <, **, !==, >=, <=, %
+// if () {},  else if () {}, else {}
+// function () {}
+// funkcija pasiimti elementą
+// const element = document.querySelector(".query")
+// elemento parametrai// element.innerText
+// element.className
+
