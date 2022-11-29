@@ -45,6 +45,13 @@ function calculateBMI() {
   const isHeightValid = heightCm > 0;
   const isWeightValid = weightKg > 0;
 
+  //2 operatoriai:
+  //and - &&
+  // or - ||
+  // if(isHeightValid && isWeightValid) {
+// console.log(true && true);
+  //}
+
   if (isHeightValid) {
     if (isWeightValid) {
       const BMI = (weightKg / heightCm / heightCm) * 10_000;

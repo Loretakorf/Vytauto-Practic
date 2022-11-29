@@ -1,0 +1,9 @@
+div {
+    margin: 20px;
+}
+input[name="gender"]:checked {
+    background-color: lightcoral;
+}
+.window {
+    display: none;
+}

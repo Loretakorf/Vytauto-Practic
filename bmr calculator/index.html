@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="./scripts.js"defer></script>
+</head>
+<body>
+    <h1>BMR calculator</h1>
+    <div>
+        <label for="height">Your height (cm)</label>
+        <input type="text" id="height" name="height"/>
+        <span id="height-error"></span>
+    </div>
+    <div>
+        <label for="weight">Your weight (kg)</label>
+        <input type="text" id="weight" name="weight">
+        <span id="weight-error"></span>
+    </div>
+    <div>
+        <label for="age">Your age ()</label>
+        <input type="text" id="age" name="age">
+        <span id="age-error"></span>
+    </div>
+    <div>
+        <p>Please select your gender</p>
+        <label for="gender-man">Men</label>
+        <input type="radio" id="gender-man" name="gender" value="man" checked>
+        
+        <label for="gender-woman">Women</label>
+        <input type="radio" id="gender-woman" name="gender" value="woman">
+        <span id="gender-error"></span>
+    </div>
+    <div>
+        <p>Please select your activity level</p>
+        <label for="activity-sedentary">Sedentary</label>
+        <input type="radio" id="activity-sedentary" name="activity-level" value="sedentary">
+        
+
+        <label for="activity-light">Light</label>
+        <input type="radio" id="activity-light" name="activity-level" value="light">
+        
+
+        <label for="activity-moderate">Moderate</label>
+        <input type="radio" id="activity-moderate" name="activity-level" value="moderate" checked>
+
+        <label for="activity-very">Very</label>
+        <input type="radio" id="activity-very" name="activity-level" value="very">
+
+        <label for="activity-extra">Extra</label>
+        <input type="radio" id="activity-extra" name="activity-level" value="extra">
+        <span id="activity-error"></span>
+    </div>
+   <button onclick="calculateBMR()">Calculate!</button>
+   <p id="result"></p>
+   <div class="window">
+        <p>You need "" callories for day</p>
+   </div>
+   <button onclick="showCallories()">Callories for day</button>
+   <p id="callories-result"></p>
+</body>
+</html>
