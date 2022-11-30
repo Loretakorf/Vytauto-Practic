@@ -55,7 +55,7 @@ function calculateBMR() {
   const activityLevelError = document.querySelector("#activity-error");
 
 
-  let activity;
+  let activity; //undef
   if (activityLevelInput) {
     activity = activityLevelInput.value;
   }
@@ -64,38 +64,34 @@ function calculateBMR() {
   const isAgeValid = age > 0;
   const isGenderValid = "man" === gender || "woman" === gender;
   const isActivityValid = "sedentary" === activity || "light" === activity || "moderate" === activity || "very" === activity || "extra" === activity;
+  
+  let activityPlaier;
+  if (activity === "sedentary") {
+    activityPlaier = 1,2;
+  }
+  if ("light" === activity) {
+    activityPlaier =  1,375;
+  }
+  if ("moderate" === activity) {
+    activityPlaier = 1,55;
+  }
+  if ("very" === activity) {
+    activityPlaier =  1,725;
+  } else  {
+    activityPlaier =  1,99;
+  }
+ 
   let BMR;
-  if("man" === gender, isHeightValid, isWeightValid, isAgeValid, isActivityValid) {
+  if("man" === gender, isHeightValid, isWeightValid, isAgeValid, isGenderValid, isActivityValid) {
     BMR = (66.5 + (13.75 * weightKg) + (5.003 * heightCm) - (6.75 * age));
   }
-  if("woman" === gender, isHeightValid, isWeightValid, isAgeValid, isActivityValid) {
+  if("woman" === gender, isHeightValid, isWeightValid, isAgeValid, isGenderValid, isActivityValid) {
     BMR = (655.1 + (9.563 * weightKg) + (1.850 * heightCm) - (4.676 * age));
   }
   const result = document.querySelector("#result");
   result.innerText = BMR;
-  
 
-  let callories;
-  if ("sedentary" === activity) {
-    callories = BMR * 1,2;
-  }
-  if ("light" === activity) {
-    callories = BMR * 1,375;
-  }
-  if ("moderate" === activity) {
-    callories = BMR * 1,55;
-  }
-  if ("very" === activity) {
-    callories = BMR * 1,725;
-  }
-  if ("extra" === activity) {
-    callories = BMR * 1,99;
-  }
-  const calloriesResult = document.querySelector("#callories-result");
-  calloriesResult.innerText = callories;
- 
 }
- 
   
 
 

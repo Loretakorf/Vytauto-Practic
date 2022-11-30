@@ -1,0 +1,24 @@
+.container {
+    margin: 0 auto;
+    max-width: 450px;
+   
+}
+.display {
+    border: 1px solid black;
+    height: 40px;
+}
+.controls {
+    display: flex;
+    gap: 10px;
+}
+.number {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    flex-grow: 1;
+}
+.operators {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
