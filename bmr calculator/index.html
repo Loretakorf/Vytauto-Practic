@@ -37,29 +37,25 @@
     <div>
         <p>Please select your activity level</p>
         <label for="activity-sedentary">Sedentary</label>
-        <input type="radio" id="activity-sedentary" name="activity-level" value="sedentary">
+        <input type="radio" id="activity-sedentary" name="activity" value="sedentary">
         
 
         <label for="activity-light">Light</label>
-        <input type="radio" id="activity-light" name="activity-level" value="light">
+        <input type="radio" id="activity-light" name="activity" value="light">
         
 
         <label for="activity-moderate">Moderate</label>
-        <input type="radio" id="activity-moderate" name="activity-level" value="moderate" checked>
+        <input type="radio" id="activity-moderate" name="activity" value="moderate" checked>
 
         <label for="activity-very">Very</label>
-        <input type="radio" id="activity-very" name="activity-level" value="very">
+        <input type="radio" id="activity-very" name="activity" value="very">
 
         <label for="activity-extra">Extra</label>
-        <input type="radio" id="activity-extra" name="activity-level" value="extra">
+        <input type="radio" id="activity-extra" name="activity" value="extra">
         <span id="activity-error"></span>
     </div>
    <button onclick="calculateBMR()">Calculate!</button>
    <p id="result"></p>
-   <div class="window">
-        <p>You need "" callories for day</p>
-   </div>
-   <button onclick="showCallories()">Callories for day</button>
-   <p id="callories-result"></p>
+ 
 </body>
 </html>

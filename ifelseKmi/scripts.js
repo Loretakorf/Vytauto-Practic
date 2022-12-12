@@ -108,32 +108,32 @@ If you are extra active (very hard exercise/sports & a physical job): calories =
 
 */
 
-// const gender = prompt("Kokia jusu litis? (vyras, moteris)");
-// const weight = Number(prompt("Koks jusu svoris? (kg)"));
-// const height = Number(prompt("Koks jusu ugis? (cm)"));
-// const age = Number(prompt("Koks jusu amzius? (metais)"));
-// const activityLevel = Number(prompt("Koks jusu aktivumo lygis? (0, 1, 2, 3)"));
+const gender = prompt("Kokia jusu litis? (vyras, moteris)");
+const weight = Number(prompt("Koks jusu svoris? (kg)"));
+const height = Number(prompt("Koks jusu ugis? (cm)"));
+const age = Number(prompt("Koks jusu amzius? (metais)"));
+const activityLevel = Number(prompt("Koks jusu aktivumo lygis? (0, 1, 2, 3)"));
 
-// let BMR;
-// if (gender === "vyras") {
-//     BMR = (66.5 + (13.75 * weight) + (5.003 * height) - (6.75 * age));
-//     console.log("vyras");
-// } else {
-//     BMR = (655.1 + (9.563 * weight) + (1.850 * height) - (4.676 * age));
-//     console.log("moteris");
-// }
-// console.log(BMR);
-// if (activityLevel === 0) {
-//     alert(BMR * 1.2);
-// } else if (activityLevel === 1) {
-//     alert(BMR * 1.375);
-// } else if (activityLevel === 2) {
-//     alert(BMR * 1.555);
-// } else if (activityLevel === 3) {
-//     alert(BMR * 1.725);
-// } else {
-//     alert(BMR * 1,9);
-// }
+let BMR;
+if (gender === "vyras") {
+    BMR = (66.5 + (13.75 * weight) + (5.003 * height) - (6.75 * age));
+    console.log("vyras");
+} else {
+    BMR = (655.1 + (9.563 * weight) + (1.850 * height) - (4.676 * age));
+    console.log("moteris");
+}
+console.log(BMR);
+if (activityLevel === 0) {
+    alert(BMR * 1.2);
+} else if (activityLevel === 1) {
+    alert(BMR * 1.375);
+} else if (activityLevel === 2) {
+   alert(BMR * 1.555);
+} else if (activityLevel === 3) {
+    alert(BMR * 1.725);
+} else {
+   alert(BMR * 1,9);
+}
 
 // /let year = prompt(
 //     "In which year was the ECMAScript-2015 specification published?",
@@ -148,34 +148,34 @@ If you are extra active (very hard exercise/sports & a physical job): calories =
 // const answer = prompt();
 // if (y === true)
 
-const answer = prompt("Definite budzet?(yes, no)");
-if (answer === "yes") {
-  const champion = prompt("Known champion for it?(yes, no)");
-  if (champion === "yes") {
-    const project = prompt("Clear project Scope?(yes, no)");
-    if (project === "yes") {
-      const timescale = prompt("Achievavle timescale?");
-      if (timescale === "yes") {
-        alert("go for it");
-      } else {
-        alert("Get more time");
-      }
-    } else {
-      const profit = prompt("Happy to profit?");
-      if (profit === "yes") {
-        alert("Cash in");
-      } else {
-        alert("Explain what it matter");
-      }
-    }
-  } else {
-    alert("Leave it alone!");
-  }
-} else {
-  const funding = prompt("alternative funding?(yes, no)");
-  if (funding === "yes") {
-    alert("Sort out funding");
-  } else {
-    alert("Leave it alone");
-  }
-}
+// const answer = prompt("Definite budzet?(yes, no)");
+// if (answer === "yes") {
+//   const champion = prompt("Known champion for it?(yes, no)");
+//   if (champion === "yes") {
+//     const project = prompt("Clear project Scope?(yes, no)");
+//     if (project === "yes") {
+//       const timescale = prompt("Achievavle timescale?");
+//       if (timescale === "yes") {
+//         alert("go for it");
+//       } else {
+//         alert("Get more time");
+//       }
+//     } else {
+//       const profit = prompt("Happy to profit?");
+//       if (profit === "yes") {
+//         alert("Cash in");
+//       } else {
+//         alert("Explain what it matter");
+//       }
+//     }
+//   } else {
+//     alert("Leave it alone!");
+//   }
+// } else {
+//   const funding = prompt("alternative funding?(yes, no)");
+//   if (funding === "yes") {
+//     alert("Sort out funding");
+//   } else {
+//     alert("Leave it alone");
+//   }
+// }
