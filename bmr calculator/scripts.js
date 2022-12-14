@@ -67,33 +67,36 @@ function calculateBMR() {
     "very" === activity ||
     "extra" === activity;
 
-  let x;
-  if ("sedentary" === activity) {
-    x = 1.2;
-  } else if ("light" === activity) {
-    x = 1.375;
-  } else if ("moderate" === activity) {
-    x = 1.55;
-  } else if ("very" === activity) {
-    x = 1.725;
-  } else {
-    x = 1.99;
-  }
+  let multiplayer;
 
+  if ("sedentary" === activity) {
+    multiplayer = 1.2;
+  } else if ("light" === activity) {
+    multiplayer = 1.375;
+  } else if ("moderate" === activity) {
+    multiplayer = 1.55;
+  } else if ("very" === activity) {
+    multiplayer = 1.725;
+  } else  {
+    multiplayer = 1.99;
+  }
+console.log(multiplayer);
   let BMR;
   if (
-    ("man" === gender && isHeightValid && isWeightValid && isAgeValid && isGenderValid && isActivityValid)
+    ("man" === gender, isHeightValid, isWeightValid, isAgeValid, isGenderValid, isActivityValid)
   ) {
-    BMR = (66.5 + 13.75 * weightKg + 5.003 * heightCm - 6.75 * age) * x;
+    BMR = ((66.5 + 13.75 * weightKg + 5.003 * heightCm - 6.75 * age) * multiplayer);
+    
   } else if (!isHeightValid || !isWeightValid || !isAgeValid) {
     heightError.innerText = "";
     weightError.innerText = "";
     ageError.innerText = "";
   }
   if (
-    ("woman" === gender && isHeightValid && isWeightValid && isAgeValid && isGenderValid && isActivityValid)
+    ("woman" === gender, isHeightValid, isWeightValid, isAgeValid, isGenderValid, isActivityValid)
   ) {
-    BMR = (655.1 + 9.563 * weightKg + 1.85 * heightCm - 4.676 * age) * x;
+    BMR = ((655.1 + 9.563 * weightKg + 1.85 * heightCm - 4.676 * age) * multiplayer);
+   
   } else if (!isHeightValid || !isWeightValid || !isAgeValid) {
     heightError.innerText = "";
     weightError.innerText = "";
@@ -104,23 +107,4 @@ function calculateBMR() {
   result.innerText = BMR;
 }
 
-// function Checkcallories() {
-//   const calories = Number(calories.value);
-//   if ("sedentary" === activity) {
-//     (calories = BMR * 1), 2;
-//   } else if ("light" === activity) {
-//     (calories = BMR * 1), 375;
-//   } else if ("moderate" === activity) {
-//     (calories = BMR * 1), 55;
-//   } else if ("very" === activity) {
-//     (calories = BMR * 1), 725;
-//   } else {
-//     (calories = BMR * 1), 99;
-//   }
-// }
-function clearResult() {
-  heightError.innerText = "";
-  weightError.innerText = "";
-  ageError.innerText = "";
-  result.innerText = "";
-}
+
