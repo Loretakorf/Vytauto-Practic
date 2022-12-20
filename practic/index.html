@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1 class="title">Dragon killer 3</h1>
+    </header>
+    <main>
+        <div class="container-left">
+            <div class="wrapper">
+                <h2>Dragon</h2>
+            <p>Health: <span id="dragon-health"></span></p>
+            </div>
+            
+            <img src="./dragon 1.svg" alt="Dragon">
+            <p>Dragon will attack you every turn! What are you going to do?</p>
+            <div class="dragon-damage">
+                <p>Dragon deals 1-20 damage every turn.</p>
+                <p>Dragon has 33% chance of taking no damage from you.</p>
+            </div>
+        </div>
+        <div class="container-right">
+            <div class="wrapper">
+                <h2>Knight</h2>
+            <p>Health: <span id="knight-health"></span></p>
+            </div>
+            
+            <img src="./knight 1.svg" alt="Dragon">
+            <div class="buttons">
+                <button id="attack-btn">Attack</button>
+                <button id="defend-btn">Defend</button>
+                <button id="heal-btn">Heal</button>
+            </div>
+            <div class="knight-damage">
+                <p>You deal 1 - 10 damage.</p>
+                <p>You take no damage, your next attack deals double damage.</p>
+                <p>You regain 1-30 health.</p>
+            </div>
+        </div>
+    
+    </main>
+    <footer id="#footer">
+        <h2 class="combat-log">Combat log</h2>  
+    </footer>
+    
+    
+</body>
+</html>
