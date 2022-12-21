@@ -3,63 +3,97 @@ const defendBtn = document.querySelector("#defend-btn");
 const healBtn = document.querySelector("#heal-btn");
 const resultDragonHealth = document.querySelector("#dragon-health");
 const resultKnightHealth = document.querySelector("#knight-health");
-const footer = document.querySelector('#footer');
+const footer = document.querySelector(".footer");
+const containerRight = document.querySelector(".container-right");
+const containerLeft = document.querySelector(".container-left");
 
+let currentRound = 1;
 
 attackBtn.addEventListener("click", knightAttack);
-defendBtn.addEventListener("click", dragonAttack);
-healBtn.addEventListener("click", displayCombatLog);
-
-// resultDragonHealth = resultDragonHealth.textContent;
-// resultKnightHealth = resultKnightHealth.textContent;
+// defendBtn.addEventListener("click", dragonAttack);
+// healBtn.addEventListener("click", displayCombatLog);
 
 function getRandomNb(max) {
-    const randomInt = Math.ceil(Math.random() * max);
-    return randomInt;
-    
+  const randomInt = Math.ceil(Math.random() * max);
+  return randomInt;
 }
-
+resultDragonHealth.textContent = "200";
 function knightAttack() {
-    const attackDamage = getRandomNb(10);
-    resultDragonHealth.textContent = "200";
-    resultDragonHealth.textContent = Number(resultDragonHealth.textContent) - attackDamage;
+  const attackDragonDamage = getRandomNb(10);
+
+  resultDragonHealth.textContent =
+    Number(resultDragonHealth.textContent) - attackDragonDamage;
+  dragonAttack(attackDragonDamage);
 }
 
-function isDragonAlive() {
-    if(resultDragonHealth.textContent > 0) {
-        return true;
-    } else {
-        return false
-    }
-}
-function dragonAttack() {
-    const attackDamage = getRandomNb(20);
-    resultKnightHealth.textContent = "100";
-    resultKnightHealth.textContent = Number(resultKnightHealth.textContent) - attackDamage;
-    console.log(resultKnightHealth);
-}
-function isKnightAlive() {
-    if(resultKnightHealth.textContent > 0) {
-        return true;
-    } else {
-        return false
-    }
-}
-function displayCombatLog() {
-    if(resultDragonHealth > 0 || resultKnightHealth > 0) {
-        footer.style.display = "block";
-        createCombatLog();
-    } 
+resultKnightHealth.textContent = "100";
+function dragonAttack(attackDragonDamage) {
+  const attackKnightDamage = getRandomNb(20);
+
+  resultKnightHealth.textContent =
+    Number(resultKnightHealth.textContent) - attackKnightDamage;
+  displayCombatLog(attackDragonDamage, attackKnightDamage);
 }
 
-function createCombatLog() {
-    const myDiv = document.createElement("div");
-     const myText = document.createTextNode("Round 1");
-     myText.textContent = "Round 1";
-   
+// function first() {
+//     // atakuoja riteris
+//     const variable = Math.random(); // 0 iki 1
+//     console.log("first", variable);
+//     second(variable, 2, "hello"); // drakono ataka
+//   }
+//   function second(param1, dvejetas, pasisveikinimas) {
+//     // drakono ataka
+//     const variable2 = Math.random(); // atakos žala
+//     console.log("second", param1, variable2);
+//     third(param1, variable2); // displayCombat log
+//   }
+//   function third(param1, param2) {
+//     // combat log funkcija // var1 ir var2
+//     console.log("third", param1, param2);
+//   }
+//   first();
 
-    footer.append(myDiv);
-     myDiv.append(myText);
+// function isKnightDefend() {
+//     let knightDefend = true;
+//     dragonAttack(knightDefend)
+//     if(attackDragonDamage <= 0) {
+//         displayCombatLog();
+//     } else {
+//         dragonAttack(knightDefend)
+//     }
+// }
+
+function displayCombatLog(attackDragonDamage, attackKnightDamage) {
+  footer.style.display = "block";
+
+  const logContainer = document.createElement("div");
+  const logHeading = document.createElement("h2");
+
+  logHeading.textContent = "Round-" + currentRound;
+  currentRound++;
+  const knightInfo = document.createElement("p");
+  knightInfo.textContent = `Knight attacks and deals ${ attackDragonDamage
     
-   return myDiv;
+  } damage.`;
+  const dragonInfo = document.createElement("p");
+  dragonInfo.textContent = `Dragon attacks and deals ${ attackKnightDamage
+    
+  } damage.`;
+  footer.append(logContainer);
+  logContainer.append(logHeading, knightInfo, dragonInfo);
+  areTheyAlive(attackDragonDamage, attackKnightDamage);
 }
+function areTheyAlive(attackDragonDamage, attackKnightDamage) {
+  if (
+    resultKnightHealth.textContent > 0 &&
+    resultDragonHealth.textContent <= 0
+  ) {
+    containerLeft.style.display = "none";
+  } else if (
+    resultKnightHealth.textContent < 0 &&
+    resultDragonHealth.textContent >= 0
+  ) {
+    containerRight.style.display = "none";
+  }
+}
+
