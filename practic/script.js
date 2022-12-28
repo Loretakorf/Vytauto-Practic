@@ -7,6 +7,9 @@ const footer = document.querySelector(".footer");
 const containerRight = document.querySelector(".container-right");
 const containerLeft = document.querySelector(".container-left");
 
+const title = document.querySelector(".paragraph-center");
+const dragon = document.querySelector(".dragon");
+
 let currentRound = 1;
 
 attackBtn.addEventListener("click", knightAttack);
@@ -94,6 +97,8 @@ function areTheyAlive(attackDragonDamage, attackKnightDamage) {
     resultDragonHealth.textContent >= 0
   ) {
     containerRight.style.display = "none";
+    title.style.display = "none";
+    dragon.classList.remove = "hidden";
   }
 }
 

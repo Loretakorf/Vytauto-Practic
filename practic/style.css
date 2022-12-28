@@ -1,34 +1,54 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 body {
-    margin: 0 100px;
+  margin: 0 100px;
 }
 .title {
-    font-size: 96px;
-    line-height: 129px;
+  font-size: 96px;
+  line-height: 129px;
 }
 main {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
+}
+.container-left,
+.container-center,
+.container-right {
+    flex: 1;
+}
+.container-center {
+    align-items: center;
+    justify-content: center;
 }
 .wrapper {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid black;
 }
 .buttons,
 .knight-damage {
-    display: flex;
-    gap: 20px;
+  display: flex;
+  gap: 20px;
 }
 button {
-    padding: 14px 57px;
-    background-color: #5B2F2F;
-    color: white;
-    border: none;
+  padding: 14px 57px;
+  background-color: #5b2f2f;
+  color: white;
+  border: none;
 }
 footer {
+  display: none;
+}
+.paragraph-center {
+  font-family: "Tienne";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 96px;
+  line-height: 129px;
+  color: #ff0000;
+}
+.hidden {
     display: none;
 }
-
