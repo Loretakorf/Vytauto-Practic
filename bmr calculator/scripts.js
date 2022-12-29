@@ -27,7 +27,7 @@
 // const result = document.querySelector("#result");
 
 function calculateBMR() {
-  //reikia domenu, inputu su variable
+  
   const heightInput = document.querySelector("#height");
   const weightInput = document.querySelector("#weight");
   const ageInput = document.querySelector("#age");
@@ -70,15 +70,15 @@ function calculateBMR() {
   let multiplayer;
 
   if ("sedentary" === activity) {
-    multiplayer = 1.2;
+    multiplayer += 1.2;
   } else if ("light" === activity) {
-    multiplayer = 1.375;
+    multiplayer += 1.375;
   } else if ("moderate" === activity) {
-    multiplayer = 1.55;
+    multiplayer += 1.55;
   } else if ("very" === activity) {
-    multiplayer = 1.725;
+    multiplayer += 1.725;
   } else  {
-    multiplayer = 1.99;
+    multiplayer += 1.99;
   }
 console.log(multiplayer);
   let BMR;
