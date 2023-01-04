@@ -1,3 +1,4 @@
-export function createUser( text) {
-    console.log(text);
+export function createUser(arg) {
+    console.log(arg);
  };
+//  export default createUser;

@@ -1,12 +1,14 @@
 import myvar, { logStuff, x } from "./script.js";
 // import createUser from "./script.js";
-import { text, text1 } from "./constant.js";
-import {createUser } from "./logger.js";
-createUser(text);
-console.log(text, text1);
+import { text, text1, text2 } from "./constant.js";
+import { createUser } from "./logger.js";
 
+console.log(text, text1, text2);
+createUser(text);
+createUser(text1);
+createUser(text2);
 logStuff(x);
-logStuff(myvar);// tik viena
+logStuff(myvar); // tik viena
 // // function first() {
 // //   // atakuoja riteris
 // //   const variable = Math.random(); // 0 iki 1
@@ -87,32 +89,32 @@ logStuff(myvar);// tik viena
 // console.log(obj.email);
 // const { myName: anotherName, email , someMethod, innerObj: {someProperty}, } = obj; // cia ne reference, o kopija myName is obj, naudojant jo rakta//destructarisacija
 // // myName = "newName";
-// console.log(anotherName, email, someProperty);
-// someMethod();
+// // console.log(anotherName, email, someProperty);
+// // someMethod();
 
-const user = {
-  email: "myemail@gmail.com",
-  name: "vardenis",
-  age: 27,
-};
-//create function that logs email
-logUser(user);
-function logUser({ email, age, name, someProperty = "default" }) {
-  name = "anotherName";
-  // if(!someProperty) {
-  //     someProperty = "default";
-  // }
-  console.log(email);
-  console.log(name);
-  console.log(age);
-  console.log(someProperty);
-}
-console.log(user);
-logUser({
-  email: "newEmail",
-  name: "new name",
-  age: 18,
-}); // inline obj
+// const user = {
+//   email: "myemail@gmail.com",
+//   name: "vardenis",
+//   age: 27,
+// };
+// //create function that logs email
+// logUser(user);
+// function logUser({ email, age, name, someProperty = "default" }) {
+//   name = "anotherName";
+//   // if(!someProperty) {
+//   //     someProperty = "default";
+//   // }
+//   console.log(email);
+//   console.log(name);
+//   console.log(age);
+//   console.log(someProperty);
+// }
+// console.log(user);
+// logUser({
+//   email: "newEmail",
+//   name: "new name",
+//   age: 18,
+// }); // inline obj
 
 // 1. Sukurkite funkciją, kuri priima objektą:// su "prekių kaina", "siuntimo kaina" ir "administraciniu mokesčiu"
 // ir iš log'ina pvm (21 procentas), nuo sudėtos sumos.// funkcija turi destruktūrizuoti tris atributus
@@ -128,12 +130,79 @@ const price = {
 getPrice(price);
 
 function getPrice({ price, shippingPrice, taxFee }) {
-//   const result = (price + shippingPrice + taxFee) * 0.21;
-    console.log((price + shippingPrice + taxFee) * 0.21);
-//   console.log(result);
+  //   const result = (price + shippingPrice + taxFee) * 0.21;
+  console.log((price + shippingPrice + taxFee) * 0.21);
+  //   console.log(result);
 }
 getPrice({
   price: 120,
-  shippingPrice: 30,
-  taxFee: 20,
+  shippingPrice: 20,
+  taxFee: 10,
 });
+
+// const obj  = {
+//   a: "text",
+//   c: {x: "text123"}
+// }
+// const {
+//   a,
+//   c: { x },
+// } = obj;
+//const a = obj.a
+//const x = obj.c.x;
+
+// const { a: text } = odj;
+// // const text = obj.a
+// const { c } =obj;
+
+// const userL = {
+//   name: "L",
+//   email: "ss@gmail.com",
+// };
+// function getUserL(userL) {
+//   const { email } = user;
+//   console.log(email);
+// }
+// getUserL(userL);
+
+// const obj = {
+//   a: "text",
+//   b: "text1",
+//   c: "text3",
+// };
+// const { a, ...restObj } = obj;
+
+// console.log("a",a);
+// console.log(obj);
+// console.log(restObj);
+
+// const user = {
+//   name: "M",
+//   email: "fff@gmail.com",
+//   password: "pass",
+// }
+
+// function logEmailAndReturnRest({email, ...restUser}) {
+//   console.log(email);
+//   return restUser;
+// }
+// const result = logEmailAndReturnRest(userH);
+// console.log("result", result);
+
+// const { ...clone } = user;
+// clone.email = "new";
+// console.log("user", user);
+// console.log("clone", clone);
+// console.log(user === clone);
+
+const product = {
+  name: "shoes",
+  stock: 3,
+  price: 23,
+};
+function getStock({ stock, ...restProduct }) {
+  console.log(stock);
+  return restProduct;
+}
+const result = getStock(product);
+console.log(result);
