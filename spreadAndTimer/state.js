@@ -14,7 +14,7 @@ const state = {
         console.log("tick");
         state.secondsElapsed++;
 
-        updateTimerText(state.secondsElapsed);
+        updateTimerText(state.secondsElapsed);// callback
       }, 1000);
     }
   },
@@ -26,5 +26,24 @@ const state = {
     }
   },
 };
+
+// class TimerState {
+//   secondsElapsed = 0;
+//   intervalId = null;
+//   constructor(secondsElapsed, intervalId) {
+//     this.intervalId = !intervalId || intervalId;
+//     this.secondsElapsed = secondsElapsed;
+//   }
+//   start(updateTimerText) {
+//     this.intervalId = setInterval(function () {
+//       this.secondsElapsed++;
+//       updateTimerText(this.secondsElapsed);
+//     }, 1000);
+//   };
+//   stop() {
+//     clearInterval(this.intervalId);
+//     this.intervalId = null;
+//   };
+// };
 
 export default state;

@@ -151,7 +151,7 @@ getPrice({
 //const a = obj.a
 //const x = obj.c.x;
 
-// const { a: text } = odj;
+// const { a: text } = obj;
 // // const text = obj.a
 // const { c } =obj;
 

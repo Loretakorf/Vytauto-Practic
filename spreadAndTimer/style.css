@@ -1,0 +1,24 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+#timer {
+    font-weight: bold;
+    font-size: large;
+    border: 1px solid black;
+    padding: 10px 64px;
+}
+button {
+    border-radius: 100%;
+    padding: 20px;
+    font-size: 14px;
+    background-color: rgb(247, 217, 217);
+    border: none;
+}
+.buttons {
+    display: flex;
+    gap: 10px;
+}
