@@ -1,4 +1,5 @@
-import timerState from "./state.js";
+import TimerState from "./timerState.js";
+import { calculateTime } from "./utils.js";
 // //spread operatorius
 // const obj = {
 //   a: "text",
@@ -60,49 +61,74 @@ const elements = {
   stopButton: document.querySelector("#stop-btn"),
   resetButton: document.querySelector("#reset-btn"),
   timerBox: document.querySelector("#timer"),
+  lapContainer: document.querySelector("#lap-container"),
 };
 console.log(elements);
-// const timer = new TimerState(updateTimerText);//??
+//
 
 function getTimeFormat(time) {
   // if(time < 10) {
   //   return `0${time}`;
   // }
   // return time;
-  return time < 10 ? `0${time}` : time;// ternary expression
-};
+  return time < 10 ? `0${time}` : time; // ternary expression
+}
 // const variable = condition ? "true" : "false";
 // const timeString = time < 10 ? `0${time}` : time > 60 ? time % 60 : time;
 // 0 iki 9
 
-
 function updateTimerText(secondsElapsed) {
   // 0 iki 59 secundes
-  const seconds = secondsElapsed % 60;
-  // minutes 0 59
-  const minutes = Math.floor(secondsElapsed / 60) % 60;
-  //hour 0 iki n
-  const hours = Math.floor(Math.floor(secondsElapsed / 60) / 60);
+  const { seconds, minutes, hours } = calculateTime(secondsElapsed);
 
-  elements.timerBox.textContent = `${getTimeFormat(hours)}:${getTimeFormat(minutes)}:${getTimeFormat(seconds)}`;
+  elements.timerBox.textContent = `${getTimeFormat(hours)}:${getTimeFormat(
+    minutes
+  )}:${getTimeFormat(seconds)}`;
   // console.log( hours, minutes, seconds);
 }
 // callback
 
+const createLap = (lapNumber, lapTime) => {
+  //setLap
+
+  const lapParagraph = document.createElement("p");
+  const lapNumberText = document.createTextNode(`Lap ${lapNumber}`);
+  const lapTimeElement = document.createElement("span");
+  const { seconds, minutes, hours } = calculateTime(lapTime);
+  lapTimeElement.textContent = `${getTimeFormat(hours)}:${getTimeFormat(
+    minutes
+  )}:${getTimeFormat(seconds)}`;
+  lapParagraph.append(lapNumberText, lapTimeElement);
+  elements.lapContainer.append(lapParagraph);
+
+  lapParagraph.style.display = "flex";
+  lapParagraph.style.gap = "50px";
+  // 1lap    00 00 02
+  // console.log(lapNumber, lapTime);
+};
+const clearLaps = () => {
+  elements.lapContainer.innerHTML = "";
+};
+
+const timerState = new TimerState({
+  updateTime: updateTimerText,
+  setLap: createLap,
+  clearLaps: clearLaps,
+}); //constructor
+
 elements.startButton.addEventListener("click", function () {
   console.log("start");
-  timerState.start(updateTimerText);
+  timerState.start();
 });
 elements.stopButton.addEventListener("click", function () {
   timerState.stop();
 });
-elements.lapButton.addEventListener("click", function () {
-  timerState.lap();
+elements.lapButton.addEventListener("click", () => {
+  timerState.lap(); //error function
 });
 elements.resetButton.addEventListener("click", function () {
   timerState.reset();
 });
-
 
 // const add = function(a, b) { //no arg
 //   console.log("a + b"); //22

@@ -1,17 +1,30 @@
 .container {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+    margin-top: 2rem;
+}
+h1 {
+    text-align: center;
+}
+.timer {
+    min-height: 400px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    border: 1px solid black;
     gap: 20px;
+    padding: 1rem;
 }
 #timer {
-    font-weight: bold;
-    font-size: large;
     border: 1px solid black;
     padding: 10px 64px;
 }
-button {
+.btn {
     border-radius: 100%;
     padding: 20px;
     font-size: 14px;
@@ -19,6 +32,29 @@ button {
     border: none;
 }
 .buttons {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 10px;
+    cursor: pointer;
+}
+button:hover {
+    opacity: 0,8;
+}
+.timer-add-timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    
+}
+.btn-add-timer {
+    background-color: rgb(247, 217, 217);
+    border: none;
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+}
+.close-btn {
+    padding: 16px;
+    background-color: white;
 }
