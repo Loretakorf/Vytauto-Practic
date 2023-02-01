@@ -178,13 +178,31 @@ class Cart {
     }
     this.updateCartTotalPriceAndQuantity()
   }
+  removeProduct(product) {
+    const newProducts = []
+    this.products.forEach((innerProduct) => {
+      if(innerProduct.id === product.id) {
+        return;
+      }
+      newProducts.push(innerProduct);
+    });
+    this.products = newProducts;
+    this.updateCartTotalPriceAndQuantity()
+  }
 
+  buyProducts() {
+    this.products.forEach(console.log);
+    console.log("total price:", this.totalCartPrice);
+    console.log("total quantity:", this.totalCartQuantity);
+    this.products = [];
+    this.updateCartTotalPriceAndQuantity();
+  }
   updateCartTotalPriceAndQuantity() {
     let newCartQty = 0;
     let newCartTotalPrice = 0;
     
     for(let product of this.products) {
-       newCartTotalPrice+= product.totalPrice * 100;
+       newCartTotalPrice += product.totalPrice * 100;
        newCartQty += product.quantity;
     }
     this.totalCartPrice = newCartTotalPrice / 100;
@@ -194,4 +212,6 @@ class Cart {
 }
 const myCart = new Cart();
 myCart.addProduct(cartProduct);
+myCart.removeProduct(cartProduct);
+myCart.buyProducts()
 console.log(myCart);
